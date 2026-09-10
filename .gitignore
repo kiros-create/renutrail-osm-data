@@ -1,0 +1,21 @@
+.venv/
+__pycache__/
+*.pyc
+work/
+dist/
+*.osm.pbf
+*.part
+*.idx
+
+# Local credentials are never publication inputs.
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+.credentials/
+credentials.json
+secrets.json
