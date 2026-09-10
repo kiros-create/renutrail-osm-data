@@ -2,6 +2,10 @@
 
 Status: **automated QA passed; NO human approval or remote publication**.
 
+This is the earlier local-only execution record. For the later repository
+setup and two actual GitHub builds, see [CLOUD-VALIDATION.md](CLOUD-VALIDATION.md).
+Those builds also have no human approval and did not publish a data Release.
+
 Source: https://download.geofabrik.de/asia/south-korea-latest.osm.pbf
 
 - Size: 286,925,006 bytes; source time: 2026-09-09T20:21:20Z.

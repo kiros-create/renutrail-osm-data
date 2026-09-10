@@ -110,8 +110,12 @@ The included workflow runs Monday **00:17 UTC (09:17 KST)** and offers manual
 `workflow_dispatch`. It uses GitHub-hosted Ubuntu, so the user's PC and Codex
 need not be running. The public repository is
 [kiros-create/renutrail-osm-data](https://github.com/kiros-create/renutrail-osm-data).
-The workflow is configured in source; its first cloud validation is pending.
-No human approval has been recorded and automatic publication is not enabled.
+The workflow is installed and two independent cloud builds passed on
+2026-09-10. All 23 data asset hashes match each other and the local baseline;
+see [cloud validation and human review checklist](CLOUD-VALIDATION.md).
+No human approval has been recorded, no data Release has been published, and
+automatic publication remains disabled. Scheduled collection is configured;
+the first scheduled event has not yet occurred.
 
 1. Keep repository variable `AUTO_PUBLISH` unset or `false` (the default).
 2. Run operation `build`. A valid candidate is retained as the `osm-candidate`
@@ -208,8 +212,11 @@ workflow security tests to pass.
 Publication is limited to the default-branch workflow, triggered only by the
 schedule or a manual dispatch; there are no push or PR triggers. The
 publication code still requires the first two distinct human-reviewed build
-runs before automatic publishing can proceed. Repository owners must configure
-branch/workflow protection and restrict write access to trusted maintainers;
-these account settings are not enabled by committing this workflow. Required
-review for workflow changes can add another control. Never label this
-repository's automated checks as human legal or engineering approval.
+runs before automatic publishing can proceed. On 2026-09-10 the repository's
+active default-branch ruleset was verified to block force pushes and branch
+deletion, with no bypass entries. Secret Protection and push protection are
+enabled. These are account-side settings, not controls installed by this file.
+Required PR review / required review for workflow changes is not enabled, and
+trusted owners can still change normal source commits and repository settings.
+Restrict write access to trusted maintainers. Never label this repository's
+automated checks as human legal or engineering approval.
