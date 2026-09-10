@@ -1,6 +1,20 @@
 # 클라우드 수집 검증 및 사람 검수 안내 — 2026-09-10
 
-상태: **자동 검증 2회 통과 / 사람 검수 미승인 / 데이터 Release 0개**.
+최신 상태: **자동 검증 2회 통과 / 사용자 화면·표기 검수 완료 / 데이터 Release 공개**.
+
+## 사용자 검수 이후 공개 — 2026-09-10
+
+- 사용자가 두 수집 결과의 지도 위치·명칭·출처 표시 검수를 완료하고 공개 진행을 지시했다.
+- [첫 승인 실행](https://github.com/kiros-create/renutrail-osm-data/actions/runs/34469944106)은 검수한 원래 빌드 `34465423952`의 artifact를 그대로 복원해 공개했다.
+- [데이터 Release](https://github.com/kiros-create/renutrail-osm-data/releases/tag/osm-20260909-f3c98b3330c1): 승인 기록 시각 `2026-09-10T11:11:11Z`, GitHub actor `kiros-create`.
+- [두 번째 승인 실행](https://github.com/kiros-create/renutrail-osm-data/actions/runs/34470068423)은 원래 빌드 `34465973491`의 동일 데이터에 대해 별도 [검수 영수증](https://github.com/kiros-create/renutrail-osm-data/releases/tag/osm-review-34465973491)을 공개했다. 승인 기록 시각 `2026-09-10T11:12:38Z`. 원래 데이터 파일은 변경하지 않았다.
+- 공개된 23개 파일 전부 HTTP 200이며 SHA-256·크기가 두 승인 후보 및 로컬 기준본과 일치했다. 이 확인은 파일 동일성 확인이지 전국 시설 사실관계 보증이 아니다.
+- 두 실제 검수 기록을 확인한 뒤 `AUTO_PUBLISH=true`를 설정했다. 앞으로 월요일 09:17 KST 예약 실행에서 품질검사를 통과한 변경 자료를 게시한다. 첫 예약 실행은 아직 확인 전이다.
+- 사이트의 공개 배포 여부는 별도다. 이 저장소의 Release 성공만으로 사이트 배포 성공을 주장하지 않는다.
+
+아래는 **사용자 검수 전 자동 검증 시점의 보존 기록**이다. 당시의
+`NOT_GRANTED`, Release 0개, 자동 게시 비활성 표시는 위 최신 상태와 구분한다.
+
 수집기가 실제 GitHub 서버에서 동작하는 것을 확인한 기록이다.
 시설의 실제 상태나 인허가를 확인했다는 뜻은 아니다.
 

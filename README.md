@@ -113,9 +113,11 @@ need not be running. The public repository is
 The workflow is installed and two independent cloud builds passed on
 2026-09-10. All 23 data asset hashes match each other and the local baseline;
 see [cloud validation and human review checklist](CLOUD-VALIDATION.md).
-No human approval has been recorded, no data Release has been published, and
-automatic publication remains disabled. Scheduled collection is configured;
-the first scheduled event has not yet occurred.
+The owner confirmed review of both candidate map results on 2026-09-10.
+The first data Release and the second same-snapshot review receipt are public;
+`AUTO_PUBLISH=true` is now configured for quality-passed scheduled releases.
+The first scheduled event has not yet occurred. These reviews cover the initial
+map presentation, not nationwide facility status or permit verification.
 
 1. Keep repository variable `AUTO_PUBLISH` unset or `false` (the default).
 2. Run operation `build`. A valid candidate is retained as the `osm-candidate`
