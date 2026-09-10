@@ -75,6 +75,14 @@ def context(event="workflow_dispatch", operation="build", auto="", result="succe
 
 
 class WorkflowSecurityTests(unittest.TestCase):
+    def test_inline_shell_scalars_cannot_contain_yaml_mapping_separator(self):
+        for line in WORKFLOW.splitlines():
+            match = re.match(r"^\s+run: (.+)$", line)
+            if match and not match[1].startswith(("'", '"')):
+                self.assertNotIn(": ", match[1], "A colon followed by a space requires a quoted or block YAML scalar")
+        install_step = next(step for step in steps(jobs()["build"]) if "pip install" in step)
+        self.assertRegex(install_step, r"(?m)^        run: \|$")
+
     def test_only_manual_and_monday_kst_schedule_triggers(self):
         triggers = WORKFLOW.split("\non:\n", 1)[1].split("\n#", 1)[0]
         self.assertEqual(re.findall(r"^  ([a-z_]+):", triggers, re.MULTILINE), ["schedule", "workflow_dispatch"])
